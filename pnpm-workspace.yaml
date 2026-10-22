@@ -2,6 +2,11 @@ packages:
   - packages/*
 
 overrides:
+  # Patched same-line transitives retained by exact upstream dependency pins.
+  undici@7.28.0: 7.29.1
+  sharp@0.35.2: 0.35.5
+  # Miniflare image bindings use the same validated metadata/transform API on 0.35.
+  sharp@0.34.5: 0.35.5
   workerd: ">=1.20260623.1"
   # Pin js-yaml to the patched release (CVE-2026-53550); 4.1.1 (via @mdxeditor/editor) is vulnerable.
   js-yaml@4.1.1: ^4.2.0
